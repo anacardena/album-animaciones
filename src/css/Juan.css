@@ -159,11 +159,11 @@ a{
 }
 @media screen and (min-width:375px) and (max-width:420px){
 
-    .transiciones, .giros{
+    .transiciones, .giros ,  .animaciones{
         grid-template-columns:1fr;
 
     }
-
+    
     .Menu ul{
         grid-template-columns:1fr 1fr;
         column-gap: 50px;
@@ -356,4 +356,185 @@ transform: rotate(360deg);
     }
   }
 
+.Zoom, .animaciones{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 50%;
+    padding: 20px ;
+    column-gap: 10px;
+    row-gap: 15px;
+     font-family: 'Roboto', sans-serif;
+     
+}
 
+
+.TitleContainer{
+    display: flex;
+    width: 400px;
+   height: 200px;
+    position: relative;
+}
+
+
+#TitleAnimation{
+    background-color: black;
+
+    color: hsla(0, 0%, 0%, .9);
+    font: normal 60px Varela Round, sans-serif;
+    height: 140px;
+    left: 0;
+    letter-spacing: 5px;
+    margin: -80px 0 0 0;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 50%;
+    width: 100%;
+    animation: move linear 2000ms infinite;    
+}
+
+@keyframes move {
+    0% {
+        text-shadow: 4px -4px 0 hsla(0, 100%, 50%, 1),
+                    3px -3px 0 hsla(0, 100%, 50%, 1),
+                    2px -2px 0 hsla(0, 100%, 50%, 1),
+                    1px -1px hsla(0, 100%, 50%, 1),
+                    -4px 4px 0 hsla(180, 100%, 50%, 1),
+                    -3px 3px 0 hsla(180, 100%, 50%, 1),
+                    2px -2px 0 hsla(180, 100%, 50%, 1),
+                    -1px 1px 0 hsla(180, 100%, 50%, 1);
+    }
+    25% {
+        text-shadow: -4px -4px 0 hsla(180, 100%, 50%, 1),
+                    -3px -3px 0 hsla(180, 100%, 50%, 1),
+                    -2px -2px 0 hsla(180, 100%, 50%, 1),
+                    -1px -1px 0 hsla(180, 100%, 50%, 1),
+                    4px -4px 0 hsla(0, 100%, 50%, 1),
+                    3px -3px 0 hsla(0, 100%, 50%, 1),
+                    2px -2px 0 hsla(0, 100%, 50%, 1),
+                    1px -1px hsla(0, 100%, 50%, 1);
+    }
+    50%{
+        text-shadow: -4px 4px 0 hsla(0, 100%, 50%, 1),
+                    -3px 3px 0 hsla(0, 100%, 50%, 1),
+                    -2px 2px 0 hsla(0, 100%, 50%, 1),
+                    -1px 1px hsla(0, 100%, 50%, 1),
+                    4px -4px 0 hsla(180, 100%, 50%, 1),
+                    -3px -3px 0 hsla(180, 100%, 50%, 1),
+                    2px -2px 0 hsla(180, 100%, 50%, 1),
+                    1px -1px 0 hsla(180, 100%, 50%, 1);
+    }
+    75%{
+        text-shadow: 4px 4px 0 hsla(0, 100%, 50%, 1),
+                    3px 3px 0 hsla(0, 100%, 50%, 1),
+                    2px 2px 0 hsla(0, 100%, 50%, 1),
+                    1px 1px hsla(0, 100%, 50%, 1),
+                    -4px -4px 0 hsla(180, 100%, 50%, 1),
+                    -3px -3px 0 hsla(180, 100%, 50%, 1),
+                    -2px -2px 0 hsla(180, 100%, 50%, 1),
+                    -1px -1px 0 hsla(180, 100%, 50%, 1);
+    }
+    100%{
+        text-shadow:
+      4px -4px 0 hsla(0, 100%, 50%, 1), 
+      3px -3px 0 hsla(0, 100%, 50%, 1), 
+      2px -2px 0 hsla(0, 100%, 50%, 1), 
+      1px -1px 0 hsla(0, 100%, 50%, 1),
+      -4px 4px 0 hsla(180, 100%, 50%, 1), 
+      -3px 3px 0 hsla(180, 100%, 50%, 1), 
+      -2px 2px 0 hsla(180, 100%, 50%, 1), 
+      -1px 1px 0 hsla(180, 100%, 50%, 1)
+    ;
+    }
+}
+/*animaciones*/
+
+#primera_animación {
+    background-color: black;
+   width: 400px;
+   height: 200px;
+  font-family: 'Cabin Condensed', sans-serif;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+ #primera_animación svg{font-weight:bold;max-width:300px;height:auto;}
+
+ @import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
+
+#segunda_animación { 
+    background-color: black;
+     width: 400px;
+   height: 200px;
+    display: inline; justify-content: center; align-items: center; margin:5px ; text-align:center; background:black; overflow:hidden; }
+
+#segunda_animación h1 {
+ font-size:25px;
+ color: white;
+ user-select:none;
+}
+
+#segunda_animación h1 span { display:inline-block; animation:float .2s ease-in-out infinite; }
+ @keyframes float {
+  0%,100%{ transform:none; }
+  33%{ transform:translateY(-1px) rotate(-2deg); }
+  66%{ transform:translateY(1px) rotate(2deg); }
+}
+#segunda_animación:hover span { animation:bounce .6s; }
+@keyframes bounce {
+  0%,100%{ transform:translate(0); }
+  25%{ transform:rotateX(20deg) translateY(2px) rotate(-3deg); }
+  50%{ transform:translateY(-20px) rotate(3deg) scale(1.1);  }
+}
+#segunda_animación {
+span:nth-child(4n) {  text-shadow:1px 1px hsl(50, 75%, 45%), 2px 2px hsl(50, 45%, 45%), 3px 3px hsl(50, 45%, 45%), 4px 4px hsl(50, 75%, 45%); }
+span:nth-child(4n-1) { text-shadow:1px 1px hsl(135, 35%, 45%), 2px 2px hsl(135, 35%, 45%), 3px 3px hsl(135, 35%, 45%), 4px 4px hsl(135, 35%, 45%); }
+span:nth-child(4n-2) {  text-shadow:1px 1px hsl(155, 25%, 50%), 2px 2px hsl(155, 25%, 50%), 3px 3px hsl(155, 25%, 50%), 4px 4px hsl(140, 25%, 50%); }
+span:nth-child(4n-3) { text-shadow:1px 1px hsl(30, 45%, 50%), 2px 2px hsl(30, 45%, 50%), 3px 3px hsl(30, 45%, 50%), 4px 4px hsl(30, 45%, 50%); }
+
+h1 span:nth-child(2){ animation-delay:.05s; }
+h1 span:nth-child(3){ animation-delay:.1s; }
+h1 span:nth-child(4){ animation-delay:.15s; }
+h1 span:nth-child(5){ animation-delay:.2s; }
+h1 span:nth-child(6){ animation-delay:.25s; }
+h1 span:nth-child(7){ animation-delay:.3s; }
+h1 span:nth-child(8){ animation-delay:.35s; }
+
+}
+
+.tercera_animacion {
+    text-align: center;
+    justify-content: center;
+    width: 400px;
+    display: flex;
+    height: 40px;
+    color: white;
+    font-size: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    background-color: black;
+}
+ul {
+    list-style: none;
+  padding-left: 10px;
+  animation: cambiar 7s infinite;
+}
+ul, p {
+    margin:0;
+}
+@keyframes cambiar {
+    0% {margin-top: 0;}
+     20% {margin-top: 0;}
+
+      25% {margin-top: -40px;}
+       50% {margin-top: -40px;}
+
+     55% {margin-top: -80px;}
+      80% {margin-top: -80px;}
+
+       85% {margin-top: -40px;}
+        95% {margin-top: -40px;}
+
+        100% {margin-top: 0;}
+  }
